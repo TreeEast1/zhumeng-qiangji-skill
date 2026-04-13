@@ -41,9 +41,21 @@ def inspect_answer(query: str | None, candidate_answer: str) -> dict[str, Any]:
         violations.append("score_type_mixup: 综合成绩被当作高考裸分")
         actions.append("remove_composite_to_raw_score_mapping")
 
+    if ("加权" in query_text and "裸分" in answer) or ("加权" in answer and "裸分" in answer):
+        violations.append("score_type_mixup: 加权成绩被当作高考裸分")
+        actions.append("remove_weighted_to_raw_score_mapping")
+
     if "复交南" in answer and "统一入围线" in answer:
         violations.append("mode_mixup: 将复交南模式默认表述为统一入围线")
         actions.append("remove_uniform_shortlist_claim")
+
+    if "报名成功" in answer and _has_any(answer, ["所有学校", "全部学校", "所有强基学校"]):
+        violations.append("pathway_overgeneralization: 将报名成功直接参加校测扩展为所有学校通用规则")
+        actions.append("bind_direct_exam_rule_to_specific_school_mode")
+
+    if "只考面试" in query_text and _has_any(answer, ["更容易录取", "门槛更低", "肯定更容易"]):
+        violations.append("strategy_misleading: 将只考面试误表述为更容易录取")
+        actions.append("remove_easy_admission_claim")
 
     if _contains_numeric_claim(answer) and not _has_any(answer, EVIDENCE_MARKERS):
         violations.append("numeric_claim_without_evidence_status")
@@ -66,6 +78,8 @@ def inspect_answer(query: str | None, candidate_answer: str) -> dict[str, Any]:
     blocked = any(
         item.startswith("score_type_mixup")
         or item.startswith("mode_mixup")
+        or item.startswith("pathway_overgeneralization")
+        or item.startswith("strategy_misleading")
         or item == "numeric_claim_without_evidence_status"
         or item == "final_claim_without_year"
         for item in violations

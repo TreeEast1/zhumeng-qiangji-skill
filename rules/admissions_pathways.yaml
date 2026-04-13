@@ -1,0 +1,40 @@
+version: 1
+description: Canonical admissions pathway constraints distilled from strong-base strategy materials.
+pathways:
+  - id: raw_score_shortlist
+    zh_name: 高考裸分入围
+    core_logic: 按高考裸分择优入围
+    guardrails:
+      - 不得将其与加权入围混为一谈
+      - 不能把入围线说成录取线
+  - id: weighted_score_shortlist
+    zh_name: 加权后高考成绩入围
+    core_logic: 特定科目按系数加权后排序入围
+    guardrails:
+      - 加权入围成绩不等于高考裸分
+      - 加权成绩可能高于高考总分表面值
+      - 未确认学校和年份时不得默认存在该规则
+  - id: direct_exam_after_registration
+    zh_name: 报名成功直接参加校测
+    core_logic: 高考后出分前校测，报名成功后先参加初试或校测环节
+    guardrails:
+      - 只适用于部分院校与模式
+      - 不得说成所有强基院校通用规则
+      - 不得据此推出高考成绩不重要
+  - id: single_subject_exception
+    zh_name: 单科小破格入围
+    core_logic: 数学、物理、化学等单科成绩突出时破格入围
+    guardrails:
+      - 适用科目、阈值、专业限制高度依赖学校和年份
+      - 不得把单科优势自动等同于可报资格
+  - id: olympiad_exception
+    zh_name: 金银牌破格入围
+    core_logic: 五大学科竞赛金银牌等满足条件时破格入围
+    guardrails:
+      - 竞赛破格范围与认可等级会随年份变化
+      - 不得默认所有学校都接受金银牌破格
+global_constraints:
+  - 不同入围路径不可混用
+  - 任何路径级结论都应绑定 school_name 和 year
+  - 建议型输出可引用路径适配性，但不得替代官方简章
+

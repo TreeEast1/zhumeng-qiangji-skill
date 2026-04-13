@@ -8,6 +8,11 @@ question_types:
       - 政策
       - 校测时间
       - 流程
+      - 入围规则
+      - 录取规则
+      - 报名成功
+      - 小破格
+      - 破格
     recommended_skills:
       - policy_parser
     required_fields:
@@ -22,6 +27,9 @@ question_types:
       - 出分后
       - 面试
       - 笔试
+      - 只考面试
+      - 复试
+      - 初试
     recommended_skills:
       - school_mode_classifier
       - policy_parser
@@ -34,6 +42,8 @@ question_types:
       - 综合成绩
       - 裸分
       - 位次
+      - 加权
+      - 相对值
     recommended_skills:
       - score_type_resolver
   eligibility:
@@ -43,6 +53,9 @@ question_types:
       - 选科
       - 竞赛
       - 资格
+      - 一本线
+      - 特招线
+      - 体测
     recommended_skills:
       - eligibility_checker
   school_recommendation:
@@ -51,7 +64,12 @@ question_types:
       - 适合冲
       - 推荐学校
       - 哪些学校
+      - 哪些院校
       - 志愿
+      - 保底
+      - 冲刺
+      - 重点关注
+      - 值得关注
     recommended_skills:
       - school_recommender
       - risk_guard
@@ -65,6 +83,9 @@ question_types:
       - 面试准备
       - 笔试准备
       - 没有竞赛
+      - 只考面试
+      - 初试
+      - 复试
     recommended_skills:
       - exam_prep_advisor
   service_intent:
@@ -74,6 +95,8 @@ question_types:
       - 规划
       - 服务
       - 冲刺
+      - 保底
+      - 风险
     recommended_skills:
       - service_router
 global_rules:
@@ -81,4 +104,5 @@ global_rules:
   high_risk_queries_always_include_risk_guard: true
   missing_year_should_raise_warning: true
   missing_province_should_downgrade_school_recommendation: true
-
+  admission_pathway_questions_should_prefer_policy_parser: true
+  direct_exam_pathway_questions_should_include_school_mode_classifier: true

@@ -54,4 +54,38 @@ cases:
     expected_risk_level: medium
     constraints:
       - must_recommend_service_direction
-
+  - id: benchmark_weighted_score_rule
+    input:
+      raw_query: 这个学校 720 的加权成绩是不是就等于高考裸分 720
+    expected_route:
+      - score_type_resolver
+      - risk_guard
+    expected_evidence_status: uncertain
+    expected_risk_level: high
+    constraints:
+      - must_not_treat_weighted_score_as_raw_score
+  - id: benchmark_direct_exam_pathway
+    input:
+      raw_query: 复交南模式是不是报名成功就能直接参加校测
+    expected_route:
+      - school_mode_classifier
+      - policy_parser
+      - risk_guard
+    expected_evidence_status: inferred_with_constraints
+    expected_risk_level: medium
+    constraints:
+      - must_say_not_all_schools_follow_this
+      - must_bind_to_school_and_year_for_final_claim
+  - id: benchmark_interview_only_strategy
+    input:
+      raw_query: 我不太擅长笔试，但表达还可以，有哪些只考面试的强基院校值得关注
+    expected_route:
+      - school_mode_classifier
+      - exam_prep_advisor
+      - school_recommender
+      - risk_guard
+    expected_evidence_status: uncertain
+    expected_risk_level: high
+    constraints:
+      - must_not_say_interview_only_means_easier
+      - should_frame_as_strategy_level_advice

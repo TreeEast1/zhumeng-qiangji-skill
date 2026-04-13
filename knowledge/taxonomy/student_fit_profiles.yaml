@@ -1,0 +1,38 @@
+version: 1
+student_fit_profiles:
+  - id: strong_total_score
+    description: 高考总分稳定且排名靠前
+    strong_matches:
+      - raw_score_shortlist
+      - qingbei_style
+  - id: strong_single_subject
+    description: 数学、物理、化学等单科特别突出
+    strong_matches:
+      - weighted_score_shortlist
+      - single_subject_exception
+  - id: olympiad_background
+    description: 具有较强竞赛经历或奖项背景
+    strong_matches:
+      - olympiad_exception
+      - direct_exam_after_registration
+  - id: interview_strength
+    description: 表达能力、临场反应和综合素质展示较强
+    strong_matches:
+      - interview_only_schools
+      - exam_prep
+  - id: foundational_subject_interest
+    description: 对基础学科或长期科研路径兴趣明确
+    strong_matches:
+      - strong_foundation_major
+      - long_cycle_training
+  - id: top_school_expansion
+    description: 希望把强基作为冲更高层次名校的增量机会
+    strong_matches:
+      - qingbei_style
+      - huawu_strategy
+  - id: long_term_commitment
+    description: 接受本硕博贯通培养和较强专业绑定
+    strong_matches:
+      - long_cycle_training
+disclaimer: Advisory profiles only. They are not admissions eligibility criteria.
+

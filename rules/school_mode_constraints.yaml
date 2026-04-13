@@ -26,4 +26,32 @@ rules:
     action:
       prohibited_behavior:
         - swap_timeline_meaning
+  - id: direct_exam_is_not_universal
+    when:
+      mentions_terms:
+        - 报名成功直接参加校测
+    action:
+      must_say:
+        - 该规则只适用于部分院校与年份
+      prohibited_statement:
+        - 所有学校都这样
+  - id: interview_only_not_equal_easier
+    when:
+      mentions_terms:
+        - 只考面试
+    action:
+      prohibited_statement:
+        - 更容易录取
+        - 门槛更低
+      must_say:
+        - 只考面试不等于没有门槛
+  - id: fujiaonan_pre_score_exam_requires_exam_timeline_binding
+    when:
+      mentions_mode:
+        - fujiaonan_style
+    action:
+      must_include:
+        - exam_timeline
+      must_say:
+        - 复交南风格通常涉及高考后出分前校测
 

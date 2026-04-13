@@ -24,4 +24,21 @@ cases:
     should_fail: true
     reasons:
       - composite_score_treated_as_raw_score
-
+  - id: hallucination_weighted_score_mixup
+    query: 这个学校 720 的加权入围成绩是不是就等于裸分 720
+    candidate_answer: 是的，加权入围成绩就是高考裸分。
+    should_fail: true
+    reasons:
+      - weighted_score_treated_as_raw_score
+  - id: hallucination_direct_exam_universal
+    query: 强基是不是所有学校都报名成功直接参加校测
+    candidate_answer: 对，所有强基学校都是报名成功就直接进校测。
+    should_fail: true
+    reasons:
+      - direct_exam_pathway_overgeneralized
+  - id: hallucination_interview_only_easier
+    query: 只考面试的强基院校是不是更容易上岸
+    candidate_answer: 是，既然没有笔试，那肯定更容易录取。
+    should_fail: true
+    reasons:
+      - interview_only_misrepresented_as_easy

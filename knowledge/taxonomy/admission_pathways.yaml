@@ -1,0 +1,24 @@
+version: 1
+admission_pathways:
+  - id: raw_score_shortlist
+    zh_name: 高考裸分入围
+    description: 按高考裸分排序入围
+    fit_hint: 更适合高考总分优势明显的考生
+  - id: weighted_score_shortlist
+    zh_name: 加权后高考成绩入围
+    description: 对数学、物理、化学等特定科目加权后排序
+    fit_hint: 更适合单科实力突出的考生
+  - id: direct_exam_after_registration
+    zh_name: 报名成功直接参加校测
+    description: 高考后出分前先参加校测或初试，再由初试决定后续资格
+    fit_hint: 更适合能尽早进入校测准备节奏的考生
+  - id: single_subject_exception
+    zh_name: 单科小破格入围
+    description: 单科成绩达到阈值后破格入围
+    fit_hint: 更适合数理化等单科拔尖但总分未必绝对占优的考生
+  - id: olympiad_exception
+    zh_name: 金银牌破格入围
+    description: 竞赛金银牌等满足条件时破格入围
+    fit_hint: 更适合有高质量竞赛背景的考生
+disclaimer: Demo taxonomy for strategy layer only. Not an official admissions source.
+
