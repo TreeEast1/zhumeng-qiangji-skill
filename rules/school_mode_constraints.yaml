@@ -1,0 +1,29 @@
+version: 1
+description: Constraints for school mode reasoning.
+rules:
+  - id: fujiaonan_mode_no_default_uniform_shortlist_line
+    when:
+      mentions_mode:
+        - fujiaonan_style
+    action:
+      prohibited_statement:
+        - 统一入围线
+      unless:
+        evidence_status_in:
+          - official_verified
+          - structured_record
+  - id: mode_comparison_requires_scope_control
+    when:
+      comparing_modes: true
+    action:
+      must_say:
+        - 模式比较不等于当年具体政策结论
+  - id: timeline_terms_must_not_be_swapped
+    when:
+      mentions_terms:
+        - 出分前校测
+        - 出分后校测
+    action:
+      prohibited_behavior:
+        - swap_timeline_meaning
+

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Answer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "question_type",
+    "route",
+    "conclusion",
+    "rationale",
+    "evidence_status",
+    "confidence",
+    "risk_level",
+    "next_step",
+    "disclaimer"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question_type": {
+      "type": "string"
+    },
+    "route": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "conclusion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "official_verified",
+        "structured_record",
+        "inferred_with_constraints",
+        "uncertain",
+        "missing_reliable_source"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "next_step": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disclaimer": {
+      "type": "string"
+    }
+  }
+}
+

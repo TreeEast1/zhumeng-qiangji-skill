@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ServiceRouterInput",
+  "type": "object",
+  "required": ["raw_query"],
+  "additionalProperties": false,
+  "properties": {
+    "raw_query": {"type": "string"},
+    "consultation_stage": {"type": ["string", "null"]},
+    "urgency_level": {"type": ["string", "null"]},
+    "clarity_level": {"type": ["string", "null"]}
+  }
+}
+

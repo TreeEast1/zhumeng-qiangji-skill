@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskGuardOutput",
+  "type": "object",
+  "required": ["blocked", "violations", "required_downgrade_actions"],
+  "additionalProperties": false,
+  "properties": {
+    "blocked": {"type": "boolean"},
+    "violations": {"type": "array", "items": {"type": "string"}},
+    "required_downgrade_actions": {"type": "array", "items": {"type": "string"}},
+    "recommended_disclaimer": {"type": "string"}
+  }
+}
+

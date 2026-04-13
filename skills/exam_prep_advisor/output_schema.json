@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExamPrepAdvisorOutput",
+  "type": "object",
+  "required": ["question_type", "prep_focus", "prep_stage"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "exam_prep"},
+    "prep_focus": {"type": "string"},
+    "prep_stage": {"type": "string"},
+    "next_action": {"type": "array", "items": {"type": "string"}},
+    "risk_level": {"type": "string"}
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PolicyParserOutput",
+  "type": "object",
+  "required": ["question_type", "conclusion", "evidence_status", "risk_level"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "policy"},
+    "conclusion": {"type": "string"},
+    "rationale": {"type": "array", "items": {"type": "string"}},
+    "evidence_status": {"type": "string"},
+    "risk_level": {"type": "string"},
+    "next_step": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

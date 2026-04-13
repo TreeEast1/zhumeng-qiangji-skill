@@ -1,0 +1,51 @@
+version: 1
+description: Guardrails for score interpretation and numeric claims.
+rules:
+  - id: score_type_must_be_explicit_or_marked_unknown
+    trigger:
+      any_of:
+        - contains_numeric_score: true
+        - contains_terms:
+            - 分数
+            - 综合成绩
+            - 入围线
+            - 录取线
+    requirement:
+      must_identify_one_of:
+        - gaokao_raw_score
+        - shortlist_line
+        - admission_line
+        - composite_score
+        - exam_score
+        - weighted_score
+        - unknown
+    bad_example: "680 能进，因为这个综合成绩已经很高。"
+  - id: do_not_treat_composite_as_raw_score
+    trigger:
+      contains_terms:
+        - 综合成绩
+    requirement:
+      prohibited_interpretation: gaokao_raw_score
+    bad_example: "综合成绩 780，说明高考裸分 780 左右。"
+  - id: numeric_claims_need_evidence_status
+    trigger:
+      contains_numeric_claim: true
+    requirement:
+      must_include_fields:
+        - evidence_status
+      allowed_evidence_status:
+        - official_verified
+        - structured_record
+        - inferred_with_constraints
+        - uncertain
+        - missing_reliable_source
+  - id: recommendation_labels_must_be_graded
+    trigger:
+      contains_recommendation: true
+    requirement:
+      allowed_labels:
+        - 可尝试
+        - 可重点关注
+        - 不能确认
+        - 风险较高
+

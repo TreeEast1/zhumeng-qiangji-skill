@@ -1,0 +1,19 @@
+disclaimer: Demo/mock data only. Not official or complete.
+policies:
+  - policy_id: demo_policy_2026_star_river
+    year: 2026
+    school_name: 星河大学
+    province: null
+    scope: 校测时间安排
+    summary: 示例学校在 2026 年采用演示性时间线，仅供结构展示。
+    source_status: demo_only
+    is_demo: true
+  - policy_id: demo_policy_2026_south_ridge
+    year: 2026
+    school_name: 南岭大学
+    province: 江苏
+    scope: 招生范围说明
+    summary: 示例记录展示学校-年份-省份绑定关系。
+    source_status: demo_only
+    is_demo: true
+

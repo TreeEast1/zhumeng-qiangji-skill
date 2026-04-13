@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ServiceRouterOutput",
+  "type": "object",
+  "required": ["question_type", "recommended_service_type", "next_action"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "service_intent"},
+    "recommended_service_type": {"type": "string"},
+    "handoff_reason": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

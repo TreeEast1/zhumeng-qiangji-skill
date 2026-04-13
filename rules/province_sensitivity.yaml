@@ -1,0 +1,30 @@
+version: 1
+description: Province-sensitive reasoning policy.
+rules:
+  - id: missing_province_downgrades_school_recommendation
+    when:
+      question_type_in:
+        - school_recommendation
+        - eligibility
+    if_missing:
+      - province
+    action:
+      level: downgrade
+      must_say:
+        - 该判断强依赖省份
+        - 缺少省份时只能做范围建议
+  - id: no_coverage_no_hard_inference
+    when:
+      school_not_confirmed_for_province: true
+    action:
+      level: block
+      message: 若学校未确认覆盖该省份，不允许强推断
+  - id: major_group_requires_subject_check
+    when:
+      mentions_major_group_or_subject_requirement: true
+    action:
+      level: enforce
+      must_check:
+        - province
+        - subject_selection
+

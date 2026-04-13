@@ -1,0 +1,30 @@
+version: 1
+description: Year-sensitive reasoning policy for Strong Foundation Plan.
+rules:
+  - id: missing_year_blocks_final_policy_claim
+    when:
+      question_type_in:
+        - policy
+        - school_recommendation
+        - eligibility
+    if_missing:
+      - year
+    action:
+      level: downgrade
+      must_say:
+        - 结论强依赖年份
+        - 缺少年份，无法直接下最终结论
+  - id: do_not_transfer_policy_across_years
+    when:
+      detected_cross_year_reference: true
+    action:
+      level: block
+      message: 不允许将某一年的强基规则硬迁移到另一年
+  - id: comparative_year_output_must_name_year
+    when:
+      comparing_multiple_years: true
+    action:
+      level: enforce
+      must_include:
+        - each_claim_has_year_binding
+

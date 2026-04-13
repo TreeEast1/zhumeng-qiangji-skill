@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "School",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "school_id",
+    "school_name",
+    "mode_tag",
+    "is_demo"
+  ],
+  "properties": {
+    "school_id": {
+      "type": "string"
+    },
+    "school_name": {
+      "type": "string"
+    },
+    "mode_tag": {
+      "type": "string",
+      "enum": [
+        "qingbei_style",
+        "fujiaonan_style",
+        "mixed_or_unknown"
+      ]
+    },
+    "covered_provinces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "major_groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  }
+}
+

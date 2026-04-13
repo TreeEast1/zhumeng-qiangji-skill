@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "province": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "subject_selection": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gaokao_score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "province_rank": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "olympiad_background": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "none",
+        "school_level",
+        "provincial",
+        "national",
+        "unknown"
+      ]
+    },
+    "target_schools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "target_majors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "consultation_stage": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "awareness",
+        "policy_sorting",
+        "school_screening",
+        "exam_prep",
+        "final_decision"
+      ]
+    },
+    "urgency_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "low",
+        "medium",
+        "high"
+      ]
+    }
+  }
+}
+

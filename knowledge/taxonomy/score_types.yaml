@@ -1,0 +1,27 @@
+version: 1
+score_types:
+  - id: gaokao_raw_score
+    zh_name: 高考裸分
+    description: 高考文化课原始分
+  - id: shortlist_line
+    zh_name: 入围线
+    description: 进入校测或后续环节的门槛
+  - id: admission_line
+    zh_name: 录取线
+    description: 最终录取边界
+  - id: composite_score
+    zh_name: 综合成绩
+    description: 由高考成绩和校测成绩等加权形成
+  - id: exam_score
+    zh_name: 校测成绩
+    description: 笔试、面试等校测环节分数
+  - id: weighted_score
+    zh_name: 加权分
+    description: 按某种内部规则换算后的分数
+  - id: rank_based_estimate
+    zh_name: 位次对应分
+    description: 用位次映射估算得到的分数，不等于真实结果
+  - id: unknown
+    zh_name: 不明确
+    description: 当前无法判定分数类型
+

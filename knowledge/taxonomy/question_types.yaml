@@ -1,0 +1,27 @@
+version: 1
+question_types:
+  - id: policy
+    description: 询问某校某年是否招生、规则如何、流程如何
+    primary_skill: policy_parser
+  - id: school_mode
+    description: 询问学校模式、考核节奏、笔试面试偏向
+    primary_skill: school_mode_classifier
+  - id: score_disambiguation
+    description: 询问某个分数、位次、分数线具体代表什么
+    primary_skill: score_type_resolver
+  - id: eligibility
+    description: 询问是否具备报名或入围的基本条件
+    primary_skill: eligibility_checker
+  - id: school_recommendation
+    description: 询问哪些学校适合冲、适合关注
+    primary_skill: school_recommender
+  - id: exam_prep
+    description: 询问校测准备和投入策略
+    primary_skill: exam_prep_advisor
+  - id: service_intent
+    description: 询问下一步适合什么服务或咨询动作
+    primary_skill: service_router
+  - id: risk_review
+    description: 对高风险结论做风险复核与拦截
+    primary_skill: risk_guard
+

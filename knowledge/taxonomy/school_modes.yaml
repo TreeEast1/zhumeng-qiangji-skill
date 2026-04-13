@@ -1,0 +1,14 @@
+version: 1
+school_modes:
+  - id: qingbei_style
+    zh_name: 清北模式
+    description: 用于表示某一类强基考核与录取逻辑
+    caution: 仅是模式标签，不代表所有年份和学校细节完全一致
+  - id: fujiaonan_style
+    zh_name: 复交南模式
+    description: 用于表示另一类强基考核与录取逻辑
+    caution: 不得默认视为统一入围线模式
+  - id: mixed_or_unknown
+    zh_name: 混合或未知
+    description: 当无法稳定归类或资料不足时使用
+

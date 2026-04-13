@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PolicyParserInput",
+  "type": "object",
+  "required": ["raw_query"],
+  "additionalProperties": false,
+  "properties": {
+    "raw_query": {"type": "string"},
+    "year": {"type": ["integer", "null"]},
+    "school_name": {"type": ["string", "null"]},
+    "province": {"type": ["string", "null"]},
+    "question_type_hint": {"type": ["string", "null"]}
+  }
+}
+

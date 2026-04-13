@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EligibilityCheckerInput",
+  "type": "object",
+  "required": ["raw_query"],
+  "additionalProperties": false,
+  "properties": {
+    "raw_query": {"type": "string"},
+    "year": {"type": ["integer", "null"]},
+    "province": {"type": ["string", "null"]},
+    "subject_selection": {"type": ["string", "null"]},
+    "school_name": {"type": ["string", "null"]},
+    "olympiad_background": {"type": ["string", "null"]}
+  }
+}
+

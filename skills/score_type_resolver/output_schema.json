@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScoreTypeResolverOutput",
+  "type": "object",
+  "required": ["question_type", "resolved_score_type", "needs_clarification"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "score_disambiguation"},
+    "resolved_score_type": {"type": "string"},
+    "confidence_band": {"type": "string"},
+    "needs_clarification": {"type": "boolean"},
+    "rationale": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SchoolModeClassifierInput",
+  "type": "object",
+  "required": ["raw_query"],
+  "additionalProperties": false,
+  "properties": {
+    "raw_query": {"type": "string"},
+    "school_name": {"type": ["string", "null"]},
+    "year": {"type": ["integer", "null"]}
+  }
+}
+

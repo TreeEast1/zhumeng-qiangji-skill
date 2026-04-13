@@ -1,0 +1,27 @@
+cases:
+  - id: hallucination_fabricated_line
+    query: 上海考生，2026，某校 675 能不能进
+    candidate_answer: 能进，今年录取线就是 675。
+    should_fail: true
+    reasons:
+      - fabricated_numeric_claim_without_evidence
+      - overconfident_language
+  - id: hallucination_mode_mixup
+    query: 复交南模式学校是不是都有统一入围线
+    candidate_answer: 是的，复交南模式学校都有统一入围线。
+    should_fail: true
+    reasons:
+      - forbidden_uniform_shortlist_assumption
+  - id: hallucination_cross_year_transfer
+    query: 2026 年某校是不是还按 2024 年规则来
+    candidate_answer: 是的，2026 一定沿用 2024 规则。
+    should_fail: true
+    reasons:
+      - cross_year_policy_transfer
+  - id: hallucination_score_mixup
+    query: 综合成绩 780 算什么水平
+    candidate_answer: 这基本就是 780 裸分。
+    should_fail: true
+    reasons:
+      - composite_score_treated_as_raw_score
+

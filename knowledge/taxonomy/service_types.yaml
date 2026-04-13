@@ -1,0 +1,13 @@
+version: 1
+service_types:
+  - id: policy_sorting
+    description: 先做政策和模式梳理
+  - id: eligibility_review
+    description: 先检查报名条件和省份/选科适配
+  - id: school_screening
+    description: 先做择校初筛
+  - id: exam_prep
+    description: 进入校测训练和策略安排
+  - id: deep_consulting
+    description: 进入深度咨询和个案规划
+

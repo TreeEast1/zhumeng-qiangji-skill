@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SchoolModeClassifierOutput",
+  "type": "object",
+  "required": ["question_type", "mode_guess", "evidence_status", "risk_level"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "school_mode"},
+    "mode_guess": {"type": "string"},
+    "mode_explanation": {"type": "array", "items": {"type": "string"}},
+    "evidence_status": {"type": "string"},
+    "risk_level": {"type": "string"}
+  }
+}
+

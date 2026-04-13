@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskGuardInput",
+  "type": "object",
+  "required": ["candidate_answer"],
+  "additionalProperties": false,
+  "properties": {
+    "raw_query": {"type": ["string", "null"]},
+    "candidate_answer": {"type": "string"},
+    "question_type": {"type": ["string", "null"]},
+    "detected_missing_fields": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EligibilityCheckerOutput",
+  "type": "object",
+  "required": ["question_type", "eligibility_status", "missing_fields"],
+  "additionalProperties": false,
+  "properties": {
+    "question_type": {"const": "eligibility"},
+    "eligibility_status": {"type": "string"},
+    "missing_fields": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "array", "items": {"type": "string"}},
+    "risk_level": {"type": "string"}
+  }
+}
+

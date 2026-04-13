@@ -1,0 +1,57 @@
+cases:
+  - id: benchmark_policy_missing_year
+    input:
+      raw_query: 某校还有强基吗
+    expected_route:
+      - policy_parser
+      - risk_guard
+    expected_evidence_status: uncertain
+    expected_risk_level: high
+    constraints:
+      - must_request_year
+      - must_not_claim_final_policy
+  - id: benchmark_score_disambiguation
+    input:
+      raw_query: 某校 680 能进吗
+    expected_route:
+      - score_type_resolver
+      - school_recommender
+      - risk_guard
+    expected_evidence_status: uncertain
+    expected_risk_level: high
+    constraints:
+      - must_not_assume_raw_score
+      - must_request_score_type_if_unknown
+  - id: benchmark_school_mode_compare
+    input:
+      raw_query: 复交南模式和清北模式区别
+    expected_route:
+      - school_mode_classifier
+      - policy_parser
+    expected_evidence_status: inferred_with_constraints
+    expected_risk_level: medium
+    constraints:
+      - can_explain_mode_difference
+      - must_not_claim_specific_year_policy
+  - id: benchmark_eligibility
+    input:
+      raw_query: 江苏物化生能报某校强基吗
+    expected_route:
+      - eligibility_checker
+      - risk_guard
+    expected_evidence_status: uncertain
+    expected_risk_level: high
+    constraints:
+      - must_request_year
+      - must_check_subject_selection
+  - id: benchmark_service_routing
+    input:
+      raw_query: 我现在应该先做政策梳理还是直接冲校测
+    expected_route:
+      - service_router
+      - exam_prep_advisor
+    expected_evidence_status: inferred_with_constraints
+    expected_risk_level: medium
+    constraints:
+      - must_recommend_service_direction
+

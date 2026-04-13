@@ -1,0 +1,31 @@
+disclaimer: Demo/mock data only. Not official or complete.
+schools:
+  - school_id: demo_star_river
+    school_name: 星河大学
+    mode_tag: qingbei_style
+    covered_provinces:
+      - 江苏
+      - 上海
+    major_groups:
+      - 数学
+      - 物理
+    is_demo: true
+  - school_id: demo_south_ridge
+    school_name: 南岭大学
+    mode_tag: fujiaonan_style
+    covered_provinces:
+      - 浙江
+      - 江苏
+    major_groups:
+      - 数学
+      - 化学
+    is_demo: true
+  - school_id: demo_jiangcheng
+    school_name: 江城大学
+    mode_tag: mixed_or_unknown
+    covered_provinces:
+      - 湖北
+    major_groups:
+      - 生物
+    is_demo: true
+

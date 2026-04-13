@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "year",
+    "school_name",
+    "scope",
+    "source_status",
+    "is_demo"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 2020,
+      "maximum": 2100
+    },
+    "school_name": {
+      "type": "string"
+    },
+    "province": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source_status": {
+      "type": "string",
+      "enum": [
+        "official_verified",
+        "structured_record",
+        "demo_only",
+        "unknown"
+      ]
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  }
+}
+

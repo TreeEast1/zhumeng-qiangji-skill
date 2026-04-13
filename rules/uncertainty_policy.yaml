@@ -1,0 +1,29 @@
+version: 1
+description: Uncertainty and evidence discipline.
+rules:
+  - id: missing_reliable_source_must_be_marked
+    when:
+      no_reliable_source: true
+    action:
+      evidence_status: missing_reliable_source
+      must_say:
+        - 未检索到可靠来源
+        - 需要以官方简章为准
+  - id: partial_information_requires_downgrade
+    when:
+      missing_critical_fields: true
+    action:
+      evidence_status: uncertain
+      risk_level: high
+      must_say:
+        - 信息不足
+        - 当前结论不稳定
+  - id: high_risk_output_requires_disclaimer
+    when:
+      risk_level_in:
+        - high
+        - critical
+    action:
+      must_include:
+        - disclaimer
+

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AdmissionsRule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "year",
+    "school_name",
+    "province",
+    "score_type",
+    "is_demo"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "school_name": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "subject_requirement": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score_type": {
+      "type": "string",
+      "enum": [
+        "gaokao_raw_score",
+        "shortlist_line",
+        "admission_line",
+        "composite_score",
+        "exam_score",
+        "unknown"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  }
+}
+

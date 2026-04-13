@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserQuery",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "raw_query"
+  ],
+  "properties": {
+    "raw_query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 2020,
+      "maximum": 2100
+    },
+    "province": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "subject_selection": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "school_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "major_interest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "rank": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "olympiad_background": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "none",
+        "school_level",
+        "provincial",
+        "national",
+        "unknown"
+      ]
+    },
+    "question_type_hint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "policy",
+        "school_mode",
+        "score_disambiguation",
+        "eligibility",
+        "school_recommendation",
+        "exam_prep",
+        "service_intent",
+        "risk_review"
+      ]
+    }
+  }
+}
+

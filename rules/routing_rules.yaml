@@ -1,0 +1,84 @@
+version: 1
+description: Query routing rules for Strong Foundation Plan skill repository.
+question_types:
+  policy:
+    keywords:
+      - 招生
+      - 简章
+      - 政策
+      - 校测时间
+      - 流程
+    recommended_skills:
+      - policy_parser
+    required_fields:
+      - year
+      - school_name
+  school_mode:
+    keywords:
+      - 复交南
+      - 清北模式
+      - 模式
+      - 出分前
+      - 出分后
+      - 面试
+      - 笔试
+    recommended_skills:
+      - school_mode_classifier
+      - policy_parser
+  score_disambiguation:
+    keywords:
+      - 能进吗
+      - 分数
+      - 录取线
+      - 入围线
+      - 综合成绩
+      - 裸分
+      - 位次
+    recommended_skills:
+      - score_type_resolver
+  eligibility:
+    keywords:
+      - 能报吗
+      - 可以报名吗
+      - 选科
+      - 竞赛
+      - 资格
+    recommended_skills:
+      - eligibility_checker
+  school_recommendation:
+    keywords:
+      - 适合报
+      - 适合冲
+      - 推荐学校
+      - 哪些学校
+      - 志愿
+    recommended_skills:
+      - school_recommender
+      - risk_guard
+    required_fields:
+      - year
+      - province
+  exam_prep:
+    keywords:
+      - 怎么准备
+      - 校测准备
+      - 面试准备
+      - 笔试准备
+      - 没有竞赛
+    recommended_skills:
+      - exam_prep_advisor
+  service_intent:
+    keywords:
+      - 先做什么
+      - 咨询
+      - 规划
+      - 服务
+      - 冲刺
+    recommended_skills:
+      - service_router
+global_rules:
+  numeric_query_requires_score_resolution: true
+  high_risk_queries_always_include_risk_guard: true
+  missing_year_should_raise_warning: true
+  missing_province_should_downgrade_school_recommendation: true
+

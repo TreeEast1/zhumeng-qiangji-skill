@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceStatus",
+  "type": "string",
+  "enum": [
+    "official_verified",
+    "structured_record",
+    "inferred_with_constraints",
+    "uncertain",
+    "missing_reliable_source"
+  ]
+}
+

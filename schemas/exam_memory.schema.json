@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExamMemory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "memory_id",
+    "school_name",
+    "year",
+    "memory_type",
+    "is_demo"
+  ],
+  "properties": {
+    "memory_id": {
+      "type": "string"
+    },
+    "school_name": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "memory_type": {
+      "type": "string",
+      "enum": [
+        "written_exam_impression",
+        "interview_impression",
+        "timeline_note",
+        "prep_advice"
+      ]
+    },
+    "content": {
+      "type": "string"
+    },
+    "source_status": {
+      "type": "string",
+      "enum": [
+        "demo_only",
+        "user_memory",
+        "unverified"
+      ]
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  }
+}
+

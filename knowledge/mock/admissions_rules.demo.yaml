@@ -1,0 +1,19 @@
+disclaimer: Demo/mock data only. Not official or complete.
+admissions_rules:
+  - rule_id: demo_rule_001
+    year: 2026
+    school_name: 星河大学
+    province: 江苏
+    subject_requirement: 物理和化学
+    score_type: shortlist_line
+    notes: 示例规则仅展示 score_type 和 subject requirement 的结构。
+    is_demo: true
+  - rule_id: demo_rule_002
+    year: 2026
+    school_name: 南岭大学
+    province: 浙江
+    subject_requirement: 物理
+    score_type: composite_score
+    notes: 示例规则强调综合成绩不等于高考裸分。
+    is_demo: true
+

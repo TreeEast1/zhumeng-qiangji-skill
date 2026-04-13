@@ -1,0 +1,17 @@
+disclaimer: Demo/mock data only. Not official or complete.
+exam_memory:
+  - memory_id: demo_memory_001
+    school_name: 星河大学
+    year: 2026
+    memory_type: written_exam_impression
+    content: 示例记录表明该仓库未来可承接经验型内容，但当前不作真实政策结论。
+    source_status: demo_only
+    is_demo: true
+  - memory_id: demo_memory_002
+    school_name: 南岭大学
+    year: 2026
+    memory_type: prep_advice
+    content: 示例记录仅演示备考建议对象结构。
+    source_status: demo_only
+    is_demo: true
+

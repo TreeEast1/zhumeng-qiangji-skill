@@ -1,0 +1,21 @@
+cases:
+  - query: 某校 680 能进吗
+    expected_skills:
+      - score_type_resolver
+      - school_recommender
+      - risk_guard
+  - query: 复交南模式和清北模式区别
+    expected_skills:
+      - school_mode_classifier
+      - policy_parser
+  - query: 江苏物化生可以报某校吗
+    expected_skills:
+      - eligibility_checker
+      - risk_guard
+  - query: 没有竞赛基础还值得准备吗
+    expected_skills:
+      - exam_prep_advisor
+  - query: 我现在该先做什么服务
+    expected_skills:
+      - service_router
+
